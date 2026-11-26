@@ -63,5 +63,12 @@ Si ya terminaste o son las 21:00 asegurate de seguir los siguientes pasos para l
 ### Endpoint base:
 
 - GET / - Mensaje de bienvenida de la API
+  Enpoints agregados:
 
-  Nota: Profe honestamente nose hacer el 4 y me queda poco tiempo para rendir PNT2 espero que con esto sirva
+  GET /api/listings?pageSize=[pageSize]&page=[page]&property_type=[property_type] - Asi pude obtener todas las propiedades con paginación y filtro opcional por tipo de propiedad como se pedia
+
+  GET /api/listings/:id - Para obtener una propiedad específica por ID (devuelve 404 si no existe que era lo que se pedia)
+
+  GET /api/listings/country/:country - Obtener todas las propiedades de un país ( sería el address.country)
+
+  Nota: Profe honestamente nose hacer el 4 y me queda poco tiempo para rendir PNT2 espero que con esto sirva, mil gracias por siempre ser tan comprensible, me sali de la sala y no te encontre, estoy esperando un rato mas a ver si estas! Disculpeme enserio, dps en cualquier otra dia que quiera o pueda le puedo defender todo lo que hice con la pantalla grabada y demas.
