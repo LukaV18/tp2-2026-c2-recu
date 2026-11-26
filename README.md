@@ -21,13 +21,13 @@ Luego de abrir el correo encuentras un mail de tu Líder Técnico con tu primera
 > ### TUS TAREAS SON LAS SIGUIENTES POR ORDEN DE PRIORIDAD
 >
 > 1. Agregar un filtro por tipo de alojamiento al endpoint existente
-Modificar el endpoint que ya existe GET /api/listings para que acepte un parámetro opcional en la query string: **property_type**. Ejemplo: /api/listings?property_type=Apartment&page=1&pageSize=10. Si se envía el parámetro, debe retornar solo las propiedades de ese tipo (ej: "Apartment", "House", "Condominium"); si no se envía, debe seguir funcionando igual que ahora. La paginación debe seguir funcionando en ambos casos.
+>    Modificar el endpoint que ya existe GET /api/listings para que acepte un parámetro opcional en la query string: **property_type**. Ejemplo: /api/listings?property_type=Apartment&page=1&pageSize=10. Si se envía el parámetro, debe retornar solo las propiedades de ese tipo (ej: "Apartment", "House", "Condominium"); si no se envía, debe seguir funcionando igual que ahora. La paginación debe seguir funcionando en ambos casos.
 > 2. Devolver 404 cuando una propiedad no existe
-Hoy el endpoint GET /api/listings/:id responde `null` con status 200 cuando el id no existe. Modificarlo para que en ese caso responda con status **404** y un mensaje `{ "message": "Propiedad no encontrada" }`. (Tip: podés usar como ejemplo cómo lo resuelve GET /api/users/:id).
+>    Hoy el endpoint GET /api/listings/:id responde `null` con status 200 cuando el id no existe. Modificarlo para que en ese caso responda con status **404** y un mensaje `{ "message": "Propiedad no encontrada" }`. (Tip: podés usar como ejemplo cómo lo resuelve GET /api/users/:id).
 > 3. Desarrollar el endpoint para obtener propiedades por país
-Crear un endpoint GET /api/listings/country/:country que retorne todas las propiedades de un país, usando el campo **address.country** (ej: "Brazil", "Spain", "United States").
+>    Crear un endpoint GET /api/listings/country/:country que retorne todas las propiedades de un país, usando el campo **address.country** (ej: "Brazil", "Spain", "United States").
 > 4. Desarrollar el endpoint para obtener el precio total de una propiedad
-Crear un endpoint GET /api/listings/:id/total-price que retorne el **_id**, el **name** y un nuevo campo **totalPrice** que sea la suma de **price** + **cleaning_fee** de esa propiedad. Si la propiedad no tiene cleaning_fee, se considera 0. (Tip: en esta base los precios están guardados como Decimal128, para sumarlos podés convertirlos con `parseFloat(listing.price.toString())`).
+>    Crear un endpoint GET /api/listings/:id/total-price que retorne el **_id**, el **name** y un nuevo campo **totalPrice** que sea la suma de **price** + **cleaning_fee** de esa propiedad. Si la propiedad no tiene cleaning_fee, se considera 0. (Tip: en esta base los precios están guardados como Decimal128, para sumarlos podés convertirlos con `parseFloat(listing.price.toString())`).
 
 > Características importantes a considerar:
 
@@ -49,14 +49,19 @@ Si ya terminaste o son las 21:00 asegurate de seguir los siguientes pasos para l
 ## Listado de endpoints implementados
 
 ### Endpoints de autenticación y usuarios:
+
 - POST /api/users/register - Registro de nuevos usuarios
 - POST /api/users/login - Login de usuarios existentes
 - GET /api/users - Obtener todos los usuarios (requiere autenticación)
 - GET /api/users/:id - Obtener un usuario específico por ID (requiere autenticación)
 
 ### Endpoints de listings/propiedades:
+
 - GET /api/listings?pageSize=[pageSize]&page=[page] - Obtener todas las propiedades con paginación opcional
 - GET /api/listings/:id - Obtener una propiedad específica por ID
 
 ### Endpoint base:
+
 - GET / - Mensaje de bienvenida de la API
+
+  Nota: Profe honestamente nose hacer el 4 y me queda poco tiempo para rendir PNT2 espero que con esto sirva
